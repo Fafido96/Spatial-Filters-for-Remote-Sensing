@@ -31,4 +31,39 @@ View the raster:
 ```{r}
 plotRGB(x=input_image)
 ```
+1. ###Spatial moving Average.
+- Reduces sharp jumps.
+- reduces noise.
+- softens edges.
+- creates blur/smoothing
+
+The Kernel Usually looks like:
+
+$$
+\frac{1}{9}
+\begin{bmatrix}
+1 & 1&1 \\
+1 & 1 & 1\\
+1&1&1
+
+\end{bmatrix}
+$$
+This means every neighboring pixel contributes equally and is divided by 9
+
+Define filter Kernel:
+```{r}
+kernel <- matrix (rep(1,9),nrow=3, byrow=T)
+kernel
+```
+
+Apply the Filter
+
+```{r}
+sma <- focal(x = input_image[[1]], w=kernel, fun=mean)
+```
+
+Plot the result
+```{r}
+plot(x=sma, col=grey(1:255/255))
+```
 
