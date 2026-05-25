@@ -21,3 +21,14 @@ input_image <- rast ("convolution_example.tif")
 
 ```
 
+View the raster metadata:
+```{r}
+input_image
+```
+
+View the raster:
+
+```{r}
+plotRGB(x=input_image)
+```
+
