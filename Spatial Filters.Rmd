@@ -1,0 +1,23 @@
+---
+title: "Spatial Filters"
+output: html_notebook
+
+---
+
+A notebook exploring the different spatial filters that can be applied to a raster image.
+
+Ensure you install terra in order to handle images and other raster data.
+
+
+
+```{r}
+library(terra)
+```
+
+Load the raster:
+
+```{r}
+input_image <- rast ("convolution_example.tif")
+
+```
+
